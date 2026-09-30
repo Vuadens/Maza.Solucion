@@ -1,0 +1,87 @@
+﻿using Maza.Data;
+using Maza.DomainModel;
+using Maza.DTOs;
+using Microsoft.EntityFrameworkCore;
+
+namespace Maza.Application.Services
+{
+    public class PromocionService : IPromocionService // logica real del service, a partir de la firma
+    {
+        private readonly IPromocionRepository _PromocionRepository;
+    
+        public PromocionService(IPromocionRepository promocionRepository) //inyeccion de dependencia del repositorio en el service para que pueda ser usado en los metodos de la clase que estamos definiendo
+        {
+            _PromocionRepository = promocionRepository;
+        }
+    
+        public async Task<Promocion> CrearPromoConDTO(PromoDTO promoDTO) //validaciones del service sobre los datos que ingreso el usuario,
+        {                                                                //los cuales viajaron en un DTO, ya que el mismo no debe poder modificar 
+            if (string.IsNullOrWhiteSpace(promoDTO.Nombre))              // ni la ID ni el estado de la promoción, que son datos que se generan en el backend. 
+            {
+                throw new ArgumentException("El nombre de la promoción no puede estar vacío.");
+            }
+
+            if (promoDTO.FechaInicio > promoDTO.FechaFin) {
+
+                throw new ArgumentException("La fecha de inicio no puede ser mayor a la fecha de fin.");
+            }
+
+            if (promoDTO.Descuento > 100 || promoDTO.Descuento < 1) 
+            {
+                throw new ArgumentException("El descuento debe estar entre 1 y 100.");
+            }
+
+            Promocion nuevaPromo = new Promocion
+            {
+                Nombre = promoDTO.Nombre,
+                Descuento = promoDTO.Descuento,
+                FechaInicio = promoDTO.FechaInicio,
+                FechaFin = promoDTO.FechaFin,
+                Estado = "Activa"
+            };
+            
+            return await _PromocionRepository.AgregarNuevaPromoAsync(nuevaPromo);
+        }
+        
+        public async Task<List<Promocion>>PromosXestadoAsync(string estado)
+        {
+            /* if (string.IsNullOrWhiteSpace(estado)){
+                throw new ArgumentException("");        esta no hace falta, ya que al ser discreto
+            }                                           en la UI, no puede ser nunca nulo en parametro
+                                                        tampoco va a llegar mal escrito, no se necesitan validaciones
+            */                                      
+            return await //que mierda va aca?
+        
+        
+        }
+
+        public async Task<Promocion> ExpirarPromoAsync(int PromocionId)
+        {
+            if(PromocionId == null) //no se como hacerlo, porque al no ser string no puedo hacer string.IsNullOrWhiteSpace()...
+            {
+                throw new ArgumentNullException("El id no puede ser nulo");
+            }
+            
+            if(PromocionId < 0) {
+                throw new ArgumentException("No existen promociones con nros negativos");
+            }
+        
+            /* pseudocodigo:
+            resultado = FindAsync(int PromocionId)
+            if resultado = null){
+                throw new ArgumentException("No existe ninguna promocion con dicha ID);
+                }
+             */
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+}

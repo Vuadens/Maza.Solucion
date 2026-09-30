@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37614.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maza.DomainModel", "Maza.DomainModel\Maza.DomainModel.csproj", "{F26A9DE6-49AD-4CA1-AC71-2E931E3779E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maza.WinFormsApp", "Maza.WinFormsApp\Maza.WinFormsApp.csproj", "{9273381C-7876-4448-83E4-FCB8748ADC95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maza.Data", "Maza.Data\Maza.Data.csproj", "{84071D85-F988-48B4-A678-8CF9ECE71423}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maza.DTOs", "Maza.DTOs\Maza.DTOs.csproj", "{CC0F9365-DC8A-4917-8E1E-C2F8907EC52B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maza.Application.Services", "Maza.Application.Services\Maza.Application.Services.csproj", "{9698955E-52BA-49E2-B249-885F532A8CB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F26A9DE6-49AD-4CA1-AC71-2E931E3779E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26A9DE6-49AD-4CA1-AC71-2E931E3779E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26A9DE6-49AD-4CA1-AC71-2E931E3779E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26A9DE6-49AD-4CA1-AC71-2E931E3779E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9273381C-7876-4448-83E4-FCB8748ADC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9273381C-7876-4448-83E4-FCB8748ADC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9273381C-7876-4448-83E4-FCB8748ADC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9273381C-7876-4448-83E4-FCB8748ADC95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84071D85-F988-48B4-A678-8CF9ECE71423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84071D85-F988-48B4-A678-8CF9ECE71423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84071D85-F988-48B4-A678-8CF9ECE71423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84071D85-F988-48B4-A678-8CF9ECE71423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC0F9365-DC8A-4917-8E1E-C2F8907EC52B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC0F9365-DC8A-4917-8E1E-C2F8907EC52B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC0F9365-DC8A-4917-8E1E-C2F8907EC52B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC0F9365-DC8A-4917-8E1E-C2F8907EC52B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9698955E-52BA-49E2-B249-885F532A8CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9698955E-52BA-49E2-B249-885F532A8CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9698955E-52BA-49E2-B249-885F532A8CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9698955E-52BA-49E2-B249-885F532A8CB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {063D4C8C-8CE7-4632-95D9-34C64EBDE431}
+	EndGlobalSection
+EndGlobal
