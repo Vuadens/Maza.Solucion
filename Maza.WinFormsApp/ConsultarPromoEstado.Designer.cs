@@ -38,7 +38,7 @@
             // dgvPromociones
             // 
             dgvPromociones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPromociones.Location = new Point(12, 45);
+            dgvPromociones.Location = new Point(22, 45);
             dgvPromociones.Name = "dgvPromociones";
             dgvPromociones.Size = new Size(452, 393);
             dgvPromociones.TabIndex = 0;

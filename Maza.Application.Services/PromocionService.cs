@@ -12,7 +12,7 @@ namespace Maza.Application.Services
         public PromocionService(IPromocionRepository promocionRepository) //inyeccion de dependencia del repositorio en el service para que pueda ser usado en los metodos de la clase que estamos definiendo
         {
             _PromocionRepository = promocionRepository;
-        }
+        } //cual es la logica atras de esto? como lo aprendo para replicar esta inyeccion de dependencias x mi cuenta?
     
         public async Task<Promocion> CrearPromoConDTO(PromoDTO promoDTO) //validaciones del service sobre los datos que ingreso el usuario,
         {                                                                //los cuales viajaron en un DTO, ya que el mismo no debe poder modificar 
@@ -49,15 +49,15 @@ namespace Maza.Application.Services
                 throw new ArgumentException("");        esta no hace falta, ya que al ser discreto
             }                                           en la UI, no puede ser nunca nulo en parametro
                                                         tampoco va a llegar mal escrito, no se necesitan validaciones
-            */                                      
-            return await //que mierda va aca?
+            */
+            return await _PromocionRepository.PromosXestadoAsync(estado); //que mierda va aca?
         
         
         }
 
-        public async Task<Promocion> ExpirarPromoAsync(int PromocionId)
+        public async Task<bool> ExpirarPromoAsync(int PromocionId)
         {
-            if(PromocionId == null) //no se como hacerlo, porque al no ser string no puedo hacer string.IsNullOrWhiteSpace()...
+            if(PromocionId == 0) //no se como hacerlo, porque al no ser string no puedo hacer string.IsNullOrWhiteSpace()...
             {
                 throw new ArgumentNullException("El id no puede ser nulo");
             }
@@ -65,7 +65,9 @@ namespace Maza.Application.Services
             if(PromocionId < 0) {
                 throw new ArgumentException("No existen promociones con nros negativos");
             }
-        
+            
+            return await _PromocionRepository.ExpirarPromoAsync(PromocionId); //aca va a ir la logica de negocio para expirar la promo, que es cambiar el estado a "expirada" y devolver la promo expirada.
+
             /* pseudocodigo:
             resultado = FindAsync(int PromocionId)
             if resultado = null){
@@ -73,15 +75,6 @@ namespace Maza.Application.Services
                 }
              */
         }
-
-
-
-
-
-
-
-
-
 
     }
 }

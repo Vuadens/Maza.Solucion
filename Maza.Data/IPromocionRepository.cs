@@ -5,6 +5,6 @@ namespace Maza.Data
     {
         Task<List<Promocion>> PromosXestadoAsync(string estado);
         Task<Promocion> AgregarNuevaPromoAsync(Promocion promocion);
-        Task<List<Promocion>> ExpirarPromoAsync(int promocionId);
+        Task<bool> ExpirarPromoAsync(int promocionId);
     }
 }

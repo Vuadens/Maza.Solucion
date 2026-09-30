@@ -23,7 +23,7 @@ namespace Maza.Data
             await _context.SaveChangesAsync();
             return promocion;
         }
-        public async Task<List<Promocion>> ExpirarPromoAsync(int promocionId)
+        public async Task<bool> ExpirarPromoAsync(int promocionId)
         {
 
             var promocionAexpirar = await _context.Promociones.FindAsync(promocionId);
@@ -32,10 +32,10 @@ namespace Maza.Data
                 promocionAexpirar.Estado = "Expirada";
                 _context.Promociones.Update(promocionAexpirar); //la línea _context.Promociones.Update(promocionAexpirar) es innecesaria (no incorrecta)
                 await _context.SaveChangesAsync();
-                return await _context.Promociones.ToListAsync();
+                return true;
             }
             
-            return await _context.Promociones.ToListAsync();
+            return false;
         }
     }           /*: como promocionAexpirar salió de FindAsync sobre el mismo _context, EF Core ya lo está "rastreando" 
                 con solo cambiar promocionAexpirar.Estado = "Expirada" y llamar SaveChangesAsync() alcanza.*/
