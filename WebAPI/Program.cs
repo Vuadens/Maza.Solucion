@@ -5,11 +5,10 @@ using WebAPI;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-
 builder.Services.AddScoped<IPromocionRepository, PromocionRepository>();
 builder.Services.AddScoped<IPromocionService, PromocionService>();
-builder.Services.AddControllers();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -29,8 +28,6 @@ app.MapPromocionEndpoints();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
-app.MapControllers();
+// app.UseAuthorization();
 
 app.Run();

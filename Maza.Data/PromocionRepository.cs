@@ -5,27 +5,27 @@ namespace Maza.Data
 {
     public class PromocionRepository : IPromocionRepository
     {
-        private readonly PromocionesContext _context; //inyeccion del dbContext para que pueda ser usado
-                                                      //en los metodos de la clase que estamos definiendo
-
-        public PromocionRepository(PromocionesContext context)
+        private PromocionesContext CreateContext()
         {
-            _context = context;
+            return new PromocionesContext();
         }
+        // instaciamos el dbContext
 
         public async Task<List<Promocion>> PromosXestadoAsync(string estado)
         {
+            var _context = CreateContext();
             return await _context.Promociones.Where(p => p.Estado == estado).ToListAsync();
         }
         public async Task<Promocion> AgregarNuevaPromoAsync(Promocion promocion)
         {
+            var _context = CreateContext();
             await _context.Promociones.AddAsync(promocion);
             await _context.SaveChangesAsync();
             return promocion;
         }
         public async Task<bool> ExpirarPromoAsync(int promocionId)
         {
-
+            var _context = CreateContext();
             var promocionAexpirar = await _context.Promociones.FindAsync(promocionId);
             if (promocionAexpirar != null)
             {

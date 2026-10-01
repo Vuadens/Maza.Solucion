@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\**" />
+    <Content Remove="Controllers\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <None Remove="Controllers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
@@ -14,10 +21,6 @@
     <ProjectReference Include="..\Maza.Application.Services\Maza.Application.Services.csproj" />
     <ProjectReference Include="..\Maza.Data\Maza.Data.csproj" />
     <ProjectReference Include="..\Maza.DomainModel\Maza.DomainModel.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
