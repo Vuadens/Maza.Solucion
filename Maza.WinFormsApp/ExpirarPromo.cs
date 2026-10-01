@@ -1,4 +1,4 @@
-﻿using Maza.Application.Services;
+using Maza.Application.Services;
 using Maza.DTOs;
 using System;
 using System.Collections.Generic;
@@ -15,6 +15,14 @@ namespace Maza.WinFormsApp
     public partial class ExpirarPromo : Form
     {
         private readonly IPromocionService _promoService;
+
+        // Constructor sin parámetros requerido por el diseñador de WinForms
+        public ExpirarPromo()
+        {
+            InitializeComponent();
+            _promoService = null!;
+        }
+
         public ExpirarPromo(IPromocionService promoService)
         {
             InitializeComponent();
