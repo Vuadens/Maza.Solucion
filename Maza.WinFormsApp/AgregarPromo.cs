@@ -1,10 +1,17 @@
-﻿using Maza.DTOs;
+using Maza.DTOs;
 using Maza.Application.Services;
 namespace Maza.WinFormsApp
 {
     public partial class AgregarPromo : Form
     {
         private readonly IPromocionService _promoService;
+
+        // Constructor sin parámetros requerido por el diseñador de WinForms
+        public AgregarPromo()
+        {
+            InitializeComponent();
+            _promoService = null!;
+        }
 
         public AgregarPromo(IPromocionService promoService)
         {

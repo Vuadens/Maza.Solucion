@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maza.DTOs", "Maza.DTOs\Maza
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maza.Application.Services", "Maza.Application.Services\Maza.Application.Services.csproj", "{9698955E-52BA-49E2-B249-885F532A8CB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{560C41B8-CC78-474F-8E28-786239E5F89B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maza.WebAPI", "Maza.WebAPI\Maza.WebAPI.csproj", "{A6BE4E3A-1AB7-4E7B-8C1D-7B962D176DC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{9698955E-52BA-49E2-B249-885F532A8CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9698955E-52BA-49E2-B249-885F532A8CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9698955E-52BA-49E2-B249-885F532A8CB4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{560C41B8-CC78-474F-8E28-786239E5F89B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{560C41B8-CC78-474F-8E28-786239E5F89B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{560C41B8-CC78-474F-8E28-786239E5F89B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{560C41B8-CC78-474F-8E28-786239E5F89B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6BE4E3A-1AB7-4E7B-8C1D-7B962D176DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6BE4E3A-1AB7-4E7B-8C1D-7B962D176DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6BE4E3A-1AB7-4E7B-8C1D-7B962D176DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6BE4E3A-1AB7-4E7B-8C1D-7B962D176DC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

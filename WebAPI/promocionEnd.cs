@@ -1,9 +1,10 @@
 ﻿using Maza.Application.Services;
 using Maza.DTOs;
+using Maza.DomainModel;
 
 namespace WebAPI
 {
-    public static class promocionEndpoints
+    public static class PromocionEndpoints
     {
         public static void MapPromocionEndpoints(this IEndpointRouteBuilder app)
         {
@@ -19,7 +20,20 @@ namespace WebAPI
 
             app.MapPost("/promocion", async (PromoDTO dto, IPromocionService promocionService) =>
             {
-                PromoDTO promoDto = await promocionService.CrearPromoConDTOAsync(dto);
+                Promocion promoDto = await promocionService.CrearPromoConDTOAsync(dto);
+            });
+
+            app.MapGet("/promocion/{id}", async (IPromocionService promocionService, int id) =>
+            {
+                var promo = await promocionService.ExpirarPromoAsync(id);
+                if (promo)
+                {
+                    return Results.Ok("Promoción expirada correctamente.");
+                }
+                else
+                {
+                    return Results.NotFound("Promoción no encontrada.");
+                }
             });
         }
     }

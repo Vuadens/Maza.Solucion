@@ -1,4 +1,4 @@
-﻿namespace Maza.WinFormsApp
+namespace Maza.WinFormsApp
 {
     partial class Home
     {
@@ -65,6 +65,7 @@
             button1.TabIndex = 2;
             button1.Text = "Crear nueva promo";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += btnCrearPromo_Click;
             // 
             // label2
             // 

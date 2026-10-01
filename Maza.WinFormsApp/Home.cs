@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,13 +25,22 @@ namespace Maza.WinFormsApp
 
         private void btnBuscarPromos_Click(object sender, EventArgs e)
         {
-            ConsultarPromoEstado ventanaConsulta = new ConsultarPromoEstado();
+            var ventanaConsulta = Program.ServiceProvider!.GetRequiredService<ConsultarPromoEstado>();
             ventanaConsulta.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Este método está vinculado actualmente al botón "Expirar promocion" en el Designer
+            var ventanaExpirar = Program.ServiceProvider!.GetRequiredService<ExpirarPromo>();
+            ventanaExpirar.ShowDialog();
+        }
 
+        private void btnCrearPromo_Click(object sender, EventArgs e)
+        {
+            // Este método será para el botón "Crear nueva promo"
+            var ventanaAgregar = Program.ServiceProvider!.GetRequiredService<AgregarPromo>();
+            ventanaAgregar.ShowDialog();
         }
 
         private void label2_Click(object sender, EventArgs e)
