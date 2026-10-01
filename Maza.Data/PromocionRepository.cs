@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Maza.DomainModel;
+using Maza.DTOs;
 
 namespace Maza.Data
 {
     public class PromocionRepository : IPromocionRepository
     {
-        private PromocionesContext CreateContext()
+        private static PromocionesContext CreateContext()
         {
             return new PromocionesContext();
         }
@@ -16,12 +17,19 @@ namespace Maza.Data
             var _context = CreateContext();
             return await _context.Promociones.Where(p => p.Estado == estado).ToListAsync();
         }
-        public async Task<Promocion> AgregarNuevaPromoAsync(Promocion promocion)
+        public async Task<Promocion> CrearPromoConDTOAsync(PromoDTO promoDTO)
         {
             var _context = CreateContext();
-            await _context.Promociones.AddAsync(promocion);
+            var nuevaPromo = new Promocion {
+                Nombre = promoDTO.Nombre,
+                Descuento = promoDTO.Descuento,
+                FechaInicio = promoDTO.FechaInicio,
+                FechaFin = promoDTO.FechaFin,
+                Estado = "Activa"   
+            };
+            await _context.AddAsync(nuevaPromo);
             await _context.SaveChangesAsync();
-            return promocion;
+            return nuevaPromo;
         }
         public async Task<bool> ExpirarPromoAsync(int promocionId)
         {

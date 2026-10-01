@@ -35,7 +35,7 @@ namespace Maza.WinFormsApp
 
             try
             {
-                await _promoService.CrearPromoConDTO(promoDto);
+                await _promoService.CrearPromoConDTOAsync(promoDto);
                 MessageBox.Show("Promoción agregada correctamente.");
             }
             catch (Exception ex)
