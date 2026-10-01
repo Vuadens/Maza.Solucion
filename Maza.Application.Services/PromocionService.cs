@@ -14,7 +14,7 @@ namespace Maza.Application.Services
             _PromocionRepository = promocionRepository;
         } //cual es la logica atras de esto? como lo aprendo para replicar esta inyeccion de dependencias x mi cuenta?
     
-        public async Task<Promocion> CrearPromoConDTOAync(PromoDTO promoDTO) //validaciones del service sobre los datos que ingreso el usuario,
+        public async Task<PromoDTO> CrearPromoConDTOAsync(PromoDTO promoDTO) //validaciones del service sobre los datos que ingreso el usuario,
         {                                                                //los cuales viajaron en un DTO, ya que el mismo no debe poder modificar 
             if (string.IsNullOrWhiteSpace(promoDTO.Nombre))              // ni la ID ni el estado de la promoción, que son datos que se generan en el backend. 
             {
@@ -43,7 +43,7 @@ namespace Maza.Application.Services
             return await _PromocionRepository.AgregarNuevaPromoAsync(nuevaPromo);
         }
         
-        public async Task<List<Promocion>>PromosXestadoAsync(string estado)
+        public async Task<List<PromoDTO>>PromosXestadoAsync(string estado)
         {
             /* if (string.IsNullOrWhiteSpace(estado)){
                 throw new ArgumentException("");        esta no hace falta, ya que al ser discreto

@@ -9,6 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Maza.Application.Services\Maza.Application.Services.csproj" />
+    <ProjectReference Include="..\Maza.Data\Maza.Data.csproj" />
+    <ProjectReference Include="..\Maza.DomainModel\Maza.DomainModel.csproj" />
+    <ProjectReference Include="..\Maza.DTOs\Maza.DTOs.csproj" />
+    <ProjectReference Include="..\WebAPI\WebAPI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

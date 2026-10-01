@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Maza.Application.Services;
 using Maza.Data;
 using WebAPI;
@@ -5,6 +6,8 @@ using WebAPI;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
 builder.Services.AddScoped<IPromocionRepository, PromocionRepository>();
 builder.Services.AddScoped<IPromocionService, PromocionService>();
 
@@ -31,3 +34,4 @@ app.UseHttpsRedirection();
 // app.UseAuthorization();
 
 app.Run();
+
