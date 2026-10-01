@@ -57,7 +57,7 @@
             // 
             cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbEstado.FormattingEnabled = true;
-            cmbEstado.Items.AddRange(new object[] { "Activas", "Expiradas", "" });
+            cmbEstado.Items.AddRange(new object[] { "Activas", "Expiradas" });
             cmbEstado.Location = new Point(480, 45);
             cmbEstado.Name = "cmbEstado";
             cmbEstado.Size = new Size(308, 23);
